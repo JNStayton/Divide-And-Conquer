@@ -11,6 +11,7 @@
 // sortedFrequency([1,1,2,2,2,2,3],1) // 2
 // sortedFrequency([1,1,2,2,2,2,3],4) // -1
 
+//binary search through the array to find the first index occurence of the value
 function findFirstIdx(arr, val) {
 	let lowerIdx = 0;
 	let upperIdx = arr.length - 1;
@@ -29,6 +30,7 @@ function findFirstIdx(arr, val) {
 	return -1;
 }
 
+//binary search through the array to find the last occurence of the value
 function findLastIdx(arr, val) {
 	let lowerIdx = 0;
 	let upperIdx = arr.length - 1;
@@ -48,6 +50,9 @@ function findLastIdx(arr, val) {
 	}
 }
 
+//runs both findFirstIdx and findLastIdx
+//if there is no firstIdx, returns -1
+//otherwise, returns the count between indices
 function sortedFrequency(arr, val) {
 	let firstIdx = findFirstIdx(arr, val);
 	let lastIdx = findLastIdx(arr, val);
